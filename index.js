@@ -12,10 +12,10 @@ const todoList = () => {
     const formattedtodos = list.map((item)=>
       {
       	if (item.overdue===new Date().toLocaleDateString("en-CA")) {
-        return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)
+        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
       } 
       	else {
-        return (` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`)
+        ` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`
       }
       });
   }
@@ -25,7 +25,7 @@ const todoList = () => {
     const formattedtodos = list.map((item)=>
       {
       	if (item.dueToday===new Date().toLocaleDateString("en-CA")) {
-        return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)
+        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
       } 
       	else {
         return (` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`)
@@ -38,10 +38,10 @@ const todoList = () => {
     const formattedtodos = list.map((item)=>
       {
       	if (item.dueLater===new Date().toLocaleDateString("en-CA")) {
-        return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)
+        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
       } 
       	else {
-        return (` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`)
+        ` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`
       }
       });
   }
@@ -99,4 +99,5 @@ let itemsDueLater = todos.dueLater()
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 console.log(formattedItemsDueLater)
 console.log("\n\n")
+
 

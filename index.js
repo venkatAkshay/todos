@@ -9,7 +9,7 @@ const todoList = () => {
 
   const overdue = () => {
     // Write the date check condition here and return the array of overdue items accordingly.
-    formattedtodos = list.map((item)=>
+    const formattedtodos = list.map((item)=>
       {
       	if (item.overdue===new Date().toLocaleDateString("en-CA")) {
         return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)
@@ -22,7 +22,7 @@ const todoList = () => {
 
   const dueToday = () => {
     // Write the date check condition here and return the array of todo items that are due today accordingly.
-    formattedtodos = list.map((item)=>
+    const formattedtodos = list.map((item)=>
       {
       	if (item.dueToday===new Date().toLocaleDateString("en-CA")) {
         return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)
@@ -35,7 +35,7 @@ const todoList = () => {
 
   const dueLater = () => {
     // Write the date check condition here and return the array of todo items that are due later accordingly.
-    formattedtodos = list.map((item)=>
+    const formattedtodos = list.map((item)=>
       {
       	if (item.dueLater===new Date().toLocaleDateString("en-CA")) {
         return (` ${item.completed ? '[x]':'[ ]'} ${item.title}`)

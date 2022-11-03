@@ -9,51 +9,22 @@ const todoList = () => {
 
   const overdue = () => {
     // Write the date check condition here and return the array of overdue items accordingly.
-    array1 = list.map((item)=>
-      {
-      	if (item.overdue===new Date().toLocaleDateString("en-CA")) {
-        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
-      } 
-      	else {
-        ` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`
-      }
-      console.log todos.toDisplayableList(overdue)
-      });
+    return all.filter((item) => item.dueDate < new Date().toLocaleDateString("en-CA"));
   }
 
   const dueToday = () => {
     // Write the date check condition here and return the array of todo items that are due today accordingly.
-    array1 = list.map((item)=>
-      {
-      	if (item.dueToday===new Date().toLocaleDateString("en-CA")) {
-        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
-      } 
-      	else {
-        return (` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`)
-      }
-      console.log todos.toDisplayableList(dueToday)
-      });
+    return all.filter((item) => item.dueDate === new Date().toLocaleDateString("en-CA"));
   }
 
   const dueLater = () => {
     // Write the date check condition here and return the array of todo items that are due later accordingly.
-    array1 = list.map((item)=>
-      {
-      	if (item.dueLater===new Date().toLocaleDateString("en-CA")) {
-        ` ${item.completed ? '[x]':'[ ]'} ${item.title}`
-      } 
-      	else {
-        ` ${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate}`
-      }
-      console.log todos.toDisplayableList(dueLater)
-      });
+    return all.filter((item) => item.dueDate > new Date().toLocaleDateString("en-CA"));
   }
 
   const toDisplayableList = (list) => {
     // Format the To-Do list here, and return the output string as per the format given above.
-    const formattedTodos = () =>{
-    return {overdue,dueToday,dueLater}
-    };
+    return(list.map(item => `${item.completed ? [x]:[ ]} ${item.title} ${item.dueDate === new Date().toLocaleDateString("en-CA")}`));
     
   }
 
@@ -104,5 +75,7 @@ let itemsDueLater = todos.dueLater()
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 console.log(formattedItemsDueLater)
 console.log("\n\n")
+
+
 
 

@@ -24,7 +24,7 @@ const todoList = () => {
 
   const toDisplayableList = (list) => {
     // Format the To-Do list here, and return the output string as per the format given above.
-    return(list.map(item => `${item.completed ? [x]:[ ]} ${item.title} ${item.dueDate === new Date().toLocaleDateString("en-CA")}`));
+    return(list.map(item => `${item.completed ? '[x]' : '[ ]'} ${item.title} ${item.dueDate === new Date().toLocaleDateString("en-CA")}`));
     
   }
 
@@ -75,6 +75,7 @@ let itemsDueLater = todos.dueLater()
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 console.log(formattedItemsDueLater)
 console.log("\n\n")
+
 
 
 
